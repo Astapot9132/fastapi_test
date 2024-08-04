@@ -9,3 +9,17 @@
 
 Реализована тестовая ручка /files/upload_files для проверки разницы в скорости
 
+Для запуска проекта используйте docker-compose up --build
+
+Проект доступен на порту 8002
+
+Тестовый запрос в файле test.py
+
+Для запуска необходимы следующие переменные:
+
+ - YANDEX_TOKEN ( если хотите сохранить в облако )
+ - POSTGRES_LOGIN 
+ - POSTGRES_PASSWORD
+ - POSTGRES_NAME 
+ - POSTGRES_HOST=pgdb
+

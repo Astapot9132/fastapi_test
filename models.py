@@ -7,9 +7,9 @@ import dotenv
 
 dotenv.load_dotenv()
 # engine = create_async_engine('sqlite+aiosqlite:///messages.db')
-
+print(os.getenv('POSTGRES_HOST'))
 engine = create_async_engine(
-        f"postgresql+asyncpg://{os.getenv('POSTGRES_LOGIN')}:{os.getenv('POSTGRES_PASSWORD')}@localhost:5432/fastapi_test"
+        f"postgresql+asyncpg://{os.getenv('POSTGRES_LOGIN')}:{os.getenv('POSTGRES_PASSWORD')}@{os.getenv('POSTGRES_HOST')}:5432/{os.getenv('POSTGRES_NAME')}"
     )
 
 
