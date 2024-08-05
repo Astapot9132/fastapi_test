@@ -8,10 +8,9 @@ from schemas import SchemaFile, SchemaFileAdd
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # await delete_tables()
-    # print('База очищена')
+    await delete_tables()
     await create_tables()
-    print('База готова')
+    print('Ready')
     yield
 
 

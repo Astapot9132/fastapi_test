@@ -19,8 +19,8 @@ files = {'file': open(os.path.join(os.getcwd(), 'test_files', filename), 'rb')}
 # print(response.json())
 
 
-
 url ='http://127.0.0.1:8002/files/stream_upload'
+# url ='http://127.0.0.1:8000/files/stream_upload'
 files = {'file': open(os.path.join(os.getcwd(), 'test_files', filename), 'rb')}
 headers = {'filename': filename}
 data = {'data': 'Здесь могло быть ваше сообщение'}
@@ -31,3 +31,4 @@ with httpx.Client() as client:
     end = time.time()
     print(f'Затрачено: {end - start}s')
     print(response.status_code, response.json(), sep=' ')
+    # print(response.text)

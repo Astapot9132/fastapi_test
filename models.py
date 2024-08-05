@@ -1,15 +1,10 @@
-import os
-from typing import Optional
-
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
-import dotenv
+from config import *
 
-dotenv.load_dotenv()
 # engine = create_async_engine('sqlite+aiosqlite:///messages.db')
-print(os.getenv('POSTGRES_HOST'))
 engine = create_async_engine(
-        f"postgresql+asyncpg://{os.getenv('POSTGRES_LOGIN')}:{os.getenv('POSTGRES_PASSWORD')}@{os.getenv('POSTGRES_HOST')}:5432/{os.getenv('POSTGRES_NAME')}"
+        f"postgresql+asyncpg://{POSTGRES_LOGIN}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:{POSTGRES_PORT}/{POSTGRES_NAME}"
     )
 
 

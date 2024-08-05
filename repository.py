@@ -11,6 +11,7 @@ class FileRepository:
             file_dict = file.model_dump()
             file = FileTable(**file_dict)
             session.add(file)
+
             await session.flush()
             await session.commit()
             return file.id
