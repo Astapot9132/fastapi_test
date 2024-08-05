@@ -3,7 +3,7 @@ import httpx
 import time
 
 # Название файла для загрузки, тестовые файлы лежат в папке test_files
-filename = "cat.png"
+filename = "cat2.jpg"
 # filename = 'cat_music.wav'
 headers = {
     'Content-Type': 'application/json'
@@ -20,7 +20,7 @@ files = {'file': open(os.path.join(os.getcwd(), 'test_files', filename), 'rb')}
 
 
 
-url ='http://localhost:8002/files/stream_upload'
+url ='http://127.0.0.1:8002/files/stream_upload'
 files = {'file': open(os.path.join(os.getcwd(), 'test_files', filename), 'rb')}
 headers = {'filename': filename}
 data = {'data': 'Здесь могло быть ваше сообщение'}

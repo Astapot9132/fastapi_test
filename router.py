@@ -52,6 +52,7 @@ async def upload(request: Request):
 
     try:
         filepath = os.path.join('./', 'stream_upload', filename_with_uuid)
+        print(filepath)
         file_to = FileTarget(filepath)
         data = ValueTarget()
         parser = StreamingFormDataParser(headers=request.headers)
@@ -91,7 +92,7 @@ async def upload(request: Request):
 
 
     # отправляем в облачное хранилище (для тестов использовал яндекс диск)
-    await ya_disk_upload(filename_with_uuid)
+    # await ya_disk_upload(filename_with_uuid)
 
 
     print(data.value.decode())

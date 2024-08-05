@@ -19,7 +19,7 @@ services:
     container_name: fastapi
     command: uvicorn main:app --reload --host 0.0.0.0 --port 8000
     volumes:
-     - .:/usr/src/app
+     - ./fastapi:/fastapi_test/stream_upload
     ports:
     - "8002:8000"
     depends_on:
@@ -35,3 +35,4 @@ networks:
 
 volumes:
   pgdb:
+  fastapi:
